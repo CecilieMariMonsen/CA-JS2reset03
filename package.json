@@ -4,9 +4,9 @@
   "description": "A repository used for the js2 CA Reset",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    
     "build": "sass src/scss:dist/css",
-    "watch": "sass --watch src/scss:dist/css",
+    "watch": "sass src/scss/:dist/css --watch",
     "dev": "npm-run-all --parallel watch start"
   },
   "keywords": [],
@@ -14,9 +14,10 @@
   "license": "ISC",
   "devDependencies": {
     "live-server": "^1.2.2",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.72.0"
   },
   "dependencies": {
-    "bootstrap": "^5.2.0"
+    "bootstrap": "^5.3.3"
   }
 }
