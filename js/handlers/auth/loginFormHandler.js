@@ -4,7 +4,7 @@ import { login } from "../../api/auth/login.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
 import * as storage from "../../helpers/storage/index.js"; 
 
-//console.log(storage.load("token"));
+//console.log(storage.load("accessToken"));
 
 export function loginFormHandler() {
   const form = document.querySelector("#loginForm");
@@ -28,7 +28,7 @@ async function handleLoginForm(event) {
   //const entries = formData.entries();
   const userDetails = Object.fromEntries(formData);
 
-  const fieldset = form.querySelector("fieldset"); 
+  const fieldset = form.querySelector("fieldset");
 
 
   try {

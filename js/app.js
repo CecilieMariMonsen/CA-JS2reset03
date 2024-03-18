@@ -1,5 +1,6 @@
 import { registerFormHandler } from "./handlers/auth/registrerFormHandler.js";
 import { loginFormHandler } from "../js/handlers/auth/loginFormHandler.js";
+import { displayPostsHandler } from "../js/handlers/posts/displayPostsHandler.js";
 
 
 function router() {
