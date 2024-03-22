@@ -70,7 +70,7 @@ function createPost(post, postId) {
       image.alt = "Post Image";
 
       const publish = document.createElement("p");// Opprett en p tag
-      content.textContent = created;
+      publish.textContent = created;
 
 
     const link = document.createElement("a");
