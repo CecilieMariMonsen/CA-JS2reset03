@@ -12,3 +12,4 @@ export async function displayPostsHandler() {
         displayMessage("#posts", "danger", error.message);
     }
 }
+
