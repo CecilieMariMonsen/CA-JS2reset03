@@ -3,6 +3,8 @@ import { loginFormHandler } from "../js/handlers/auth/loginFormHandler.js";
 import { displayPostsHandler } from "../js/handlers/posts/displayPostsHandler.js";
 import { displaySinglePostHandler } from "./handlers/posts/displaySinglePostHandler.js";
 import { srcPostHandler } from "./handlers/posts/srcPostHandler.js";
+import { newPostFormHandler } from "./handlers/posts/newPostHandler.js";
+//import { deletePostHandler} from "./handlers/posts/deletPostHandler.js"; 
 
 function router() {
     const pathname = window.location.pathname;
@@ -23,6 +25,8 @@ console.log(pathname);
         case "/thePosts/":
         case "/thePosts/index.html":
               displayPostsHandler();
+              newPostFormHandler();
+             // deletePostHandler();
               srcPostHandler();
         break; 
 

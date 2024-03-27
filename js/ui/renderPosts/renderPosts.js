@@ -1,9 +1,13 @@
+import { deletePostHandler } from "../../handlers/posts/deletPostHandler.js";
+
 export function renderPosts(parent, posts) {
     const container = document.querySelector(parent);
 
     container.innerHTML = "";
 
-    const postsHtml = posts.map((post) => {
+    let postsArray = Array.isArray(posts) ? posts : [posts];
+
+    const postsHtml = postsArray.map((post) => {
         return createPost(post);
     });
 
@@ -18,6 +22,7 @@ export function renderPosts(parent, posts) {
 
 function createPost(post) {
     const { id, title:heading, media } = post;
+    //console.log("hvor er id", id) 
 
     const postContainer = document.createElement("div");
     postContainer.classList.add("post");
@@ -35,9 +40,29 @@ function createPost(post) {
     link.textContent = "Read More";
     link.classList.add("post-link");
 
+    const editPost = document.createElement("a");
+    editPost.href = `/singelPost/index.html?id=${id}`;
+    editPost.textContent = "Edit Post";
+    editPost.classList.add("editpost-link");
+
+    
+    const deleteButton = document.createElement("a");
+    deleteButton.href = `/singelPost/index.html?id=${id}`;
+    deleteButton.textContent = "DELETE";
+    deleteButton.classList.add("delete-button");
+
+    deleteButton.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent the default action
+        if (id !== null ){
+            deletePostHandler(id); // Call the deletePostFormHandler function when the button is clicked
+        }
+    });
+
     postContainer.append(title);
     postContainer.append(image); 
     postContainer.append(link); 
+    postContainer.append(editPost);
+    postContainer.append(deleteButton);
     
 
     return postContainer;
