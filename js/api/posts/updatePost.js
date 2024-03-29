@@ -20,7 +20,9 @@ const options = {
     
 };
 
-const response = await fetch(postsURL, options); //denne er viktig for å få dataen tilbake
+const url = `${postsURL}/${postData.id}`;
+
+const response = await fetch(url, options); //denne er viktig for å få dataen tilbake
 const json = await response.json(); //denne er viktig for å få dataen tilbake
 
 console.log(response);

@@ -40,10 +40,19 @@ function createPost(post) {
     link.textContent = "Read More";
     link.classList.add("post-link");
 
-    const editPost = document.createElement("a");
-    editPost.href = `/singelPost/index.html?id=${id}`;
+    /*const editPost = document.createElement("a");
+    editPost.href = `/editPost/index.html?id=${id}`;
     editPost.textContent = "Edit Post";
-    editPost.classList.add("editpost-link");
+    editPost.classList.add("editpost-link");*/
+
+    // Create an edit button
+    const editButton = document.createElement("a");
+    editButton.textContent = "Edit";
+    editButton.classList.add("post-edit-button");
+    editButton.onclick = () => {
+        window.location.href = `/editPost/index.html?id=${id}`; // Replace with your edit post page URL
+    };
+
 
     
     const deleteButton = document.createElement("a");
@@ -61,7 +70,7 @@ function createPost(post) {
     postContainer.append(title);
     postContainer.append(image); 
     postContainer.append(link); 
-    postContainer.append(editPost);
+    postContainer.append(editButton);
     postContainer.append(deleteButton);
     
 
