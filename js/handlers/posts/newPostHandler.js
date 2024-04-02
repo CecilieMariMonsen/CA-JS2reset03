@@ -2,8 +2,6 @@
 import { displayMessage } from "../../ui/common/displayMessage.js";
 import { newPost } from "../../api/posts/newPost.js";
 
-
-// export the newPostFormHandler function
 export function newPostFormHandler() {
     const form = document.querySelector("#newPostForm");
 
@@ -17,6 +15,11 @@ export function newPostFormHandler() {
             postDetails.title = document.getElementById('title').value;
             postDetails.body = document.getElementById('content').value;
             postDetails.media = document.getElementById('media').value;
+
+            const tagsInput = document.querySelector("#tags");
+            postDetails.tags = tagsInput.value.split(",");
+
+             // få inn try catch her istedenfor .then og .catch?
 
             newPost(postDetails)
                 .then(() => {

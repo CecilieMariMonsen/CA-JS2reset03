@@ -1,35 +1,8 @@
-/*import { updatePost } from "../../api/posts/updatePost.js";
-import { displayMessage } from "../../ui/common/displayMessage.js";
-
-export async function editPostHandler(id, postDetails) {
-    //const querystring = window.location.search;
-
-    try {
-        if (!id) {
-            throw new Error("No ID was provided");
-        }
-
-        if(id !== null && !isNaN(id)){
-
-        await updatePost(id, postDetails); // Pass id and postDetails to updatePost function
-
-        // Redirect to the posts page after successful update
-        window.location.href = "/thePosts/index.html";
-        }
-    } catch (error) {
-        console.log(error);
-        displayMessage("#message", "danger", error.message);
-    }
-}*/
-
-
 
 import { displayMessage } from "../../ui/common/displayMessage.js";
 import { updatePost } from "../../api/posts/updatePost.js";
 import { getPosts } from "../../api/posts/getPosts.js";
 
-
-// export the newPostFormHandler function
 export async function editPostFormHandler() {
     const form = document.querySelector("#editPostForm");
     
@@ -46,6 +19,7 @@ export async function editPostFormHandler() {
             form.title.value = postData.title;
             form.content.value = postData.body;
             form.media.value = postData.media;
+            form.tags.value = postData.tags.join(", ");
 
 
         form.addEventListener("submit", (event) => {
@@ -53,12 +27,20 @@ export async function editPostFormHandler() {
             const form = event.target;
             const formData = new FormData(form);
             const postDetails = Object.fromEntries(formData.entries());
+           
+            document.title = `${postDetails.title} | JS 2`;
 
             postDetails.title = document.getElementById('title').value;
             postDetails.body = document.getElementById('content').value;
             postDetails.media = document.getElementById('media').value;
 
+            const tagsInput = document.querySelector("#tags");
+            postDetails.tags = tagsInput.value.split(",");
+
+
             postDetails.id = id;
+
+            // få inn try catch her istedenfor .then og .catch? 
 
             updatePost(postDetails)
                 .then(() => {

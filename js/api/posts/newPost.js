@@ -3,6 +3,8 @@ import { getToken } from "../../helpers/auth/getToken.js";
 //import { displayMessage } from "../../ui/common/displayMessage.js";
 import { addPostToFeed } from "../../ui/renderPosts/renderAddPost.js";
 
+// skal eg ta inn messsage her?
+
 export async function newPost(postDetails) {
     const token = getToken();
 
@@ -20,8 +22,8 @@ const options = {
     body: JSON.stringify(postDetails),
 };
 
-const response = await fetch(postsURL, options); //denne er viktig for å få dataen tilbake
-const json = await response.json(); //denne er viktig for å få dataen tilbake
+const response = await fetch(postsURL, options);
+const json = await response.json();
 
 console.log(response);
 

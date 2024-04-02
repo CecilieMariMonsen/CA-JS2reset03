@@ -4,8 +4,6 @@ import { login } from "../../api/auth/login.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
 import * as storage from "../../helpers/storage/index.js"; 
 
-//console.log(storage.load("accessToken"));
-
 export function loginFormHandler() {
   const form = document.querySelector("#loginForm");
   
@@ -14,7 +12,6 @@ export function loginFormHandler() {
   } else {
     console.log("login not found.");
   }
-
   
 }
 
@@ -22,10 +19,8 @@ async function handleLoginForm(event) {
   event.preventDefault();
   console.log(event)
 
-
   const form = event.target;
   const formData = new FormData(form);
-  //const entries = formData.entries();
   const userDetails = Object.fromEntries(formData);
 
   const fieldset = form.querySelector("fieldset");
@@ -43,7 +38,5 @@ async function handleLoginForm(event) {
   }
   finally{
     fieldset.disabled = false;
-  }
-
- ;
+  };
 }

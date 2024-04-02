@@ -25,6 +25,10 @@ if (!response.ok) {
     throw new Error(json.errors[0].message);
 }
 
+for (let post of json) {
+    console.log("Tags for post:", post.tags);
+}
+
 return json;
 
 }

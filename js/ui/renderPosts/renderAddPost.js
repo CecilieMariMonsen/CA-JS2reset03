@@ -1,20 +1,17 @@
-//import { deletePostHandler } from "../../handlers/posts/deletPostHandler.js";
 import { renderDeletPost } from "../../ui/renderPosts/renderDeletPost.js";
 
 export function addPostToFeed(parent, post) {
     const container = document.querySelector(parent);
-
-    // Create the new post
+    
     const newPostHtml = createPost(post);
 
-    // Add the new post to the top of the feed
     container.prepend(newPostHtml);
 
     console.log(newPostHtml);
     console.log(container);
 }
 function createPost(post) {
-    const { id, title:heading, media } = post;
+    const { id, title:heading, media, tags } = post;
 
     const postContainer = document.createElement("div");
     postContainer.classList.add("post");
@@ -26,6 +23,10 @@ function createPost(post) {
     image.src = media;
     image.alt = "Post Image";
     image.classList.add("post-image");
+
+    const tagParagraph = document.createElement("p");
+    tagParagraph.textContent = "Tags: " + tags.join(", ");
+    tagParagraph.classList.add("post-tags");
      
     const link = document.createElement("a");
     link.href = `/singelPost/index.html?id=${id}`;
@@ -36,14 +37,8 @@ function createPost(post) {
     const deleteButton = renderDeletPost(id);
    
 
-    postContainer.append(title); 
-    postContainer.append(image); 
-    postContainer.append(link); 
-    postContainer.append(deleteButton);
-   
-    
+    postContainer.append(title, image, tagParagraph, link, deleteButton);
 
-     console.log("hei hei", link, deleteButton)
 
     return postContainer;
 }

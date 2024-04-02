@@ -7,9 +7,12 @@ export function renderDeletPost(id) {
     deleteButton.classList.add("delete-button");
 
     deleteButton.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent the default action
-        deletePostHandler(id); // Call the deletePostFormHandler function when the button is clicked
+        event.preventDefault();
+        deletePostHandler(id);
     });
 
     return deleteButton;
 }
+
+
+// skal eg bruke denne eller bruker eg den i  renderSrcPost.js og renderAddPost.js?

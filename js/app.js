@@ -17,8 +17,6 @@ console.log(pathname);
         case "/index.html":
         registerFormHandler();     
         break;
-
-        case "/auth/login/":
         case "/auth/login/index.html":
             loginFormHandler();
             break; 

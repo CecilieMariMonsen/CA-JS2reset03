@@ -5,8 +5,6 @@ import { displayMessage } from "../../ui/common/displayMessage.js";
 export async function deletePostHandler(id) {
     const querystring = window.location.search;
   
-
-
     try {
         if (!id) {
             throw new Error("No ID was provided");
@@ -14,9 +12,8 @@ export async function deletePostHandler(id) {
 
         if(id !== null && !isNaN(id)){
 
-        await deletePost(id); // Pass id til deletePost funksjonen
+        await deletePost(id); 
 
-        // Redirect to the posts page after successful deletion
         window.location.href = "/thePosts/index.html";
         }
     } catch (error) {
