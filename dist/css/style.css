@@ -11854,4 +11854,11 @@ textarea.form-control-lg {
   flex-direction: column;
 }
 
+.addPostButton {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: aqua;
+  color: black;
+}
+
 /*# sourceMappingURL=style.css.map */
