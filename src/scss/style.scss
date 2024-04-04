@@ -1,0 +1,15 @@
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "variables";
+
+
+
+.post-image{
+    height: auto;
+    width: 200px;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;  
+}

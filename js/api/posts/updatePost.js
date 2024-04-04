@@ -21,15 +21,19 @@ const options = {
 };
 
 const url = `${postsURL}/${postData.id}`;
-
 const response = await fetch(url, options); 
 const json = await response.json();
 
 console.log(response);
 
-if (!response.ok) { 
-    throw new Error(json.errors[0].message);
-    ;
+try {
+    if (!response.ok) {
+        throw new Error(json.errors[0].message);
+    }
+}
+
+catch (error) {
+    console.log(error);
 }
 
 return json;

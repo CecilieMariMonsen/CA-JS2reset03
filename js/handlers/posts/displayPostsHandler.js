@@ -4,6 +4,7 @@ import { renderPosts } from "../../ui/renderPosts/renderPosts.js";
 
 
 export async function displayPostsHandler() {
+    document.title = `${posts.id} | JS 2 `;
     try {
         const posts = await getPosts();
         renderPosts("#posts", posts);

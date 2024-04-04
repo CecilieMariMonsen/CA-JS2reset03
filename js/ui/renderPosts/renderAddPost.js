@@ -5,7 +5,7 @@ export function addPostToFeed(parent, post) {
     
     const newPostHtml = createPost(post);
 
-    container.prepend(newPostHtml);
+    container.prepend(newPostHtml); 
 
     console.log(newPostHtml);
     console.log(container);

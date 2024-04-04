@@ -1,3 +1,9 @@
+/**
+ * @param {string} parent
+ * @param {Array | Object} posts
+ * @returns {void}
+ */
+
 import { deletePostHandler } from "../../handlers/posts/deletPostHandler.js";
 
 export function renderPosts(parent, posts) {
@@ -30,15 +36,14 @@ function createPost(post) {
     title.textContent = heading;
 
     const image = document.createElement("img");
-      image.src = media;
-      image.alt = "Post Image";
-      image.classList.add("post-image");
+    image.src = media;
+    image.alt = "Post Image";
+    image.classList.add("post-image");
 
-      const tagParagraph = document.createElement("p");
-      tagParagraph.textContent = "Tags: " + tags.join(", ");
-      tagParagraph.classList.add("post-tags");
+    const tagParagraph = document.createElement("p");
+    tagParagraph.textContent = "Tags: " + tags.join(", ");
+    tagParagraph.classList.add("post-tags");
       
-     
     const link = document.createElement("a");
     link.href = `/singelPost/index.html?id=${id}`;
     link.textContent = "Read More";

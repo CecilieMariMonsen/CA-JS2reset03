@@ -6,7 +6,7 @@ export function newPostFormHandler() {
     const form = document.querySelector("#newPostForm");
 
     if (form) {
-        form.addEventListener("submit", (event) => {
+        form.addEventListener("submit", async (event) => {
             event.preventDefault();
             const form = event.target;
             const formData = new FormData(form);
@@ -19,16 +19,28 @@ export function newPostFormHandler() {
             const tagsInput = document.querySelector("#tags");
             postDetails.tags = tagsInput.value.split(",");
 
-             // få inn try catch her istedenfor .then og .catch?
+            try {
+                 await newPost(postDetails);
+                if (!postDetails) {
+                    throw new Error("No post was found");
+                }
+                window.location.href = "/thePosts/index.html";
+                
+            }
+            catch (error) {
+                console.log(error);
+                displayMessage("message", "danger", error);
+            }
 
-            newPost(postDetails)
-                .then(() => {
-                    window.location.href = "/thePosts/index.html";
-                })
-                .catch((error) => {
-                    console.log(error);
-                    displayMessage("message", "danger", error);
-                });
+
+            // newPost(postDetails)
+            //     .then(() => {
+            //         window.location.href = "/thePosts/index.html";
+            //     })
+            //     .catch((error) => {
+            //         console.log(error);
+            //         displayMessage("message", "danger", error);
+            //     });
         });
     }
 }

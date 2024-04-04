@@ -3,7 +3,7 @@ import { deletePost } from "../../api/posts/deletePost.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
 
 export async function deletePostHandler(id) {
-    const querystring = window.location.search;
+    //const querystring = window.location.search; //trenger eg denne??
   
     try {
         if (!id) {

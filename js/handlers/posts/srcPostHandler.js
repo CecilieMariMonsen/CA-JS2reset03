@@ -1,15 +1,15 @@
 import { displayMessage } from "../../ui/common/displayMessage.js";
 import { renderSearchResults} from "../../ui/renderPosts/renderSrcPost.js";
 import { srcPosts } from "../../api/posts/srcPost.js";
-//import { renderSearchResults } from "../../ui/renderPosts/renderSrcPost.js";
+
 
 document.addEventListener("DOMContentLoaded", srcPostHandler);
 
-export async function srcPostHandler() { 
+export async function srcPostHandler() {  
     const form = document.querySelector("#searchForm");
     const searchInput = document.querySelector("#searchInput");
     
-    console.log(searchInput);
+    //console.log(searchInput);
     
     if (form && searchInput) {
         form.addEventListener("submit", (event) => handleSearchForm(event, searchInput));
@@ -25,19 +25,20 @@ function searchPosts(posts, searchTerm) {
 async function handleSearchForm(event, searchInput) {
     event.preventDefault();
 
-     console.log(searchInput.value);
+     //console.log(searchInput.value);
 
     const searchQuery = searchInput ? searchInput.value.trim() : event.target ? event.target.value.trim() : '';
-    console.log("Search query:", searchQuery);
+   //console.log("Search query:", searchQuery);
 
     try {
         const posts = await srcPosts(searchQuery);
-        console.log("Fetched posts:", posts);
+        //console.log("Fetched posts:", posts);
 
         const filteredPosts = searchPosts(posts, searchQuery);
         
-        renderSearchResults("#srcResualt", filteredPosts);
-        console.log("Posts rendered");
+        renderSearchResults("#srcResualt", filteredPosts); //#srcResualt er id til div i html
+       
+        //console.log("Posts rendered");
         
         if (searchInput) searchInput.value = "";
         
