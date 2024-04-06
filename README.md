@@ -2,7 +2,7 @@
 A repository used for the js2 CA Reset
 # CA-JS2reset
 
-![image](/image/Skjermbilde%202023-11-19%20181156.png)
+![image](/image/registrer-form.jpg)
 
 ## Description
 
