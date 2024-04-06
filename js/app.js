@@ -6,6 +6,7 @@ import { srcPostHandler } from "./handlers/posts/srcPostHandler.js";
 import { newPostFormHandler } from "./handlers/posts/newPostHandler.js";
 //import { deletePostHandler} from "./handlers/posts/deletPostHandler.js"; 
 import { editPostFormHandler } from "./handlers/posts/editPosFormtHandler.js";
+import { filterPostHandler } from "./handlers/posts/filterPostsHandler.js";
 
 function router() {
     const pathname = window.location.pathname;
@@ -26,6 +27,7 @@ console.log(pathname);
               displayPostsHandler();
               newPostFormHandler();
              // deletePostHandler();
+             filterPostHandler();
               srcPostHandler();
         break; 
 

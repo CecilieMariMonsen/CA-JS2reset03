@@ -23,10 +23,10 @@ export async function displaySinglePostHandler(){
         document.title = `${post.id} | JS 2 `;
         document.getElementById("title").innerHTML = post.title;
         document.getElementById("content").innerHTML = post.body;
-        document.getElementById("imagepost").innerHTML = post.media;
+        document.getElementById("image").innerHTML = post.media;
         document.getElementById("publish").innerHTML = post.created;
        //console.log(post);
-        renderPost("#post", post);
+        renderPost("#post-singel", post);
 
     } catch (error) {
         console.log(error);
