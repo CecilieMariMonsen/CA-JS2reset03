@@ -32,14 +32,13 @@ git https://github.com/CecilieMari/css-frameworks-ca.git
 
 Open the repo with github desctop and open it using visual studio cod.
 
-3. Install instructions.
+3. Install instructions:
+`npm install`
 
-npm install
-
-5. For development
+5. For development:
  `npm run watch`
 
-6. To build
+6. To build:
  `npm run build`: 
 
 ## Contact
