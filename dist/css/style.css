@@ -11844,5 +11844,30 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+h2, .h2 {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.post-image {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-div {
+  display: flex;
+  gap: 10px;
+}
 
 /*# sourceMappingURL=style.css.map */
