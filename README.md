@@ -1,12 +1,11 @@
 
-A repository used for the js2 CA Reset
 # CA-JS2reset
 
 ![image](/image/registrer-form.jpg)
 
 ## Description
 
-This is a school project where we worked with bootstrap and sass. Here the task was to install Sass on your PC and then work with Bootstrap and Sass to create a website. The website should contain three pages.
+In this project, I've worked with an API created by the school. The task involved creating a social media-like platform where users could register, login, create posts, and have the ability to edit or delete their posts.
 
 - A login page
 - Feed page
